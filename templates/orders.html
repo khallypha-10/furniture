@@ -1,0 +1,68 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+
+<div class="untree_co-section before-footer-section">
+    <div class="container">
+      <div class="row mb-5">
+          <div class="site-blocks-table " >
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="product-thumbnail">reference number</th>
+                  <th class="product-thumbnail">Image</th>
+                  <th class="product-name">Product</th>
+                  <th class="product-price">Price</th>
+                  <th class="product-quantity">Quantity</th>
+                  <th class="product-total">Total</th>
+                  <th class="product-total">Delivered</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                
+                
+                {% for order in orders %}
+                <tr>
+                  {% for area in order.orderItem.all %}
+                  <td class="product-thumbnail">
+                    <h2 class="h5 text-black">{{order.ref_number}}</h2>
+                  </td>
+                  
+                  
+                  <td class="product-thumbnail">
+                    <img src="{{area.product.image.url}}" alt="Image" class="img-fluid">
+                  </td>
+                    <td>{{area.product.name}}</td>
+                    <td>{{area.product.price}}</td>
+                    <td>{{area.quantity}}</td>
+                    <td>{{area.prod}}</td>
+                    {% if order.delivered %}
+                    <td>Yes <i class="fa-solid fa-circle-check"></i></td>
+                    {% else %}
+                    <td>In Transit <i class="fa-solid fa-truck"></i></td>
+                    {% endif %}
+                    
+                    
+                  
+                    
+                    
+                </tr>
+                {% endfor %}
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        
+      </div>
+
+      
+       
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+{% if messages %}
+<br>
+<div class="messages">
+{% for message in messages %}
+	<div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+		<i class="fa-solid fa-thumbs-up"></i> {{ message }}
+	</div>
+{% endfor %}
+</div>
+{% endif %}
+<!-- Start Hero Section -->
+<div class="hero">
+    <div class="container">
+        <div class="row justify-content-between"><div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <p><a href="{% url 'edit-profile' user.username %}" class="btn btn-secondary me-md-2">Edit Profile</a></p>
+            <p><a href="{% url 'password_change' %}" class="btn btn-secondary me-md-2">Change Password</a></p>
+            <p><a href="{% url 'orders' user %}" class="btn btn-secondary me-md-2">View Orders</a></p>
+        </div>
+            <div class="col-lg-5">
+                <div class="intro-excerpt">
+                    <h1>{{user.username}}</h1>
+                    
+                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+                    <p><a href="{% url 'shop' %}" class="btn btn-secondary me-2">Shop Now</a></p> 
+                    
+                </div>
+              
+            </div>
+            
+           
+        </div>
+        
+    </div>
+</div>
+<!-- End Hero Section -->
+<div class="col-12 col-md-4 col-lg-3 mb-5">
+    
+
+</div>
+
+{% endblock content %}

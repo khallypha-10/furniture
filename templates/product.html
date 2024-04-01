@@ -1,0 +1,28 @@
+{% extends "navbar.html" %}
+{% load static %}
+{% block content %}
+
+<div class="untree_co-section product-section before-footer-section">
+    <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-4 col-lg-3 mb-5">
+                <a class="product-item" href="{% url 'add' product.slug %}">
+                    <img src="{{product.image.url}}" class="img-fluid product-thumbnail">
+                    <h3 class="product-title">{{product.name}}</h3>
+                    <strong class="product-price">${{product.price}}</strong>
+                    <span class="icon-cross">
+                        <img src="{% static 'images/cross.svg' %}" class="img-fluid">
+                        
+                    </span>
+                    
+                        <input name ="item" type="hidden" value="{{product.id}}">
+                    
+                </a>
+                
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

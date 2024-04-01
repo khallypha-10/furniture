@@ -1,0 +1,26 @@
+{% extends "navbar.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="untree_co-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post" enctype="multipart/form-data">
+
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <p>Have an account? <a href="{% url 'login' %}">Login</a></p>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>      
+
+{% endblock content %}
