@@ -1,4 +1,26 @@
+# 🛋️ Furniture E-Commerce Store  
+
 This is a furniture website created usimg Python and Django as the framework. It features elements of e-commerce. You can add furniture items to your cart, then add an address and check out. The payment method used is Stripe. 
+
+
+**A responsive e-commerce platform built with:**  
+- **Frontend**: HTML5, CSS3, JavaScript  
+- **Backend**: Django (Python)  
+- **Database**: SQLite 
+
+
+## ✨ Key Features  
+- User authentication (e.g., login, signup)  
+- Product filtering/search  
+- Shopping cart functionality  
+- Admin dashboard *(if applicable)*  
+
+## 🚀 How to Run Locally  
+```bash
+git clone https://github.com/khallypha-10/furniture.git  
+cd furniture  
+pip install -r requirements.txt  
+python manage.py runserver  
 
 # furniture
 ![Screenshot 2024-03-19 223122](https://github.com/khallypha-10/furniture/assets/113286546/cd1084e7-b931-47a7-b48b-207ab474fcac)
